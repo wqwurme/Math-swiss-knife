@@ -1,27 +1,5 @@
 import math
 
-print("""
-██░░██░░░░░░█░░░████████░░░██░░░██░░░░░░████
-█░██░█░░░░░█░█░░░░░██░░░░░░██░░░██░░░░░██████
-█░░░░█░░░░█████░░░░██░░░░░░███████░░░░░██░░░░
-█░░░░█░░░██░░░██░░░██░░░░░░██░░░██░░░░░░████░
-█░░░░█░░░██░░░██░░░██░░░░░░██░░░██░░░░░░░░░██
-████████████████████████████████████████████
-""")
-
-print("-----[MATH]-----")
-print("[1] Переводчик систем счисления")
-print("[2] Возведение любого числа в степень")
-print("[3] Модуль числа")
-print("[4] Пифагоровы тройки")
-print("[5] Количество делителей")
-print("[6] Гипотенуза")
-print("[7] Корень числа")
-print("[8] Факториал")
-print("[9] Калькулятор")
-print("[10] НОК и НОД")
-func = int(input("Выберите нужную функцию: "))
-
 def calculator():
     def add(x, y):
         return x + y
@@ -62,7 +40,6 @@ def calculator():
                 break
         else:
             print("Некорректный ввод. Пожалуйста, выберите правильную операцию.")
-
 
 def convert_base(number, from_base, to_base):
     decimal_number = int(number, from_base)
@@ -129,7 +106,6 @@ def find_square_root():
         result = math.sqrt(num)
         print("Квадратный корень числа", num, "равен", result)
 
-
 def factorial(n):
     if n == 0:
         return 0
@@ -138,13 +114,11 @@ def factorial(n):
     else:
         return n * factorial(n - 1)
 
-# Функция для нахождения НОД
 def gcd(a, b):
     while b:
         a, b = b, a % b
     return a
 
-# Функция для нахождения НОК
 def lcm(a, b):
     return a * b // gcd(a, b)
 
@@ -154,29 +128,51 @@ def gcd_lcm():
     print(f"Наибольший общий делитель (НОД) чисел {num1} и {num2} равен: {gcd(num1, num2)}")
     print(f"Наименьшее общее кратное (НОК) чисел {num1} и {num2} равно: {lcm(num1, num2)}")
 
+while True:
+    print("""
+    ██░░██░░░░░░█░░░████████░░░██░░░██░░░░░░████
+    █░██░█░░░░░█░█░░░░░██░░░░░░██░░░██░░░░░██████
+    █░░░░█░░░░█████░░░░██░░░░░░███████░░░░░██░░░░
+    █░░░░█░░░██░░░██░░░██░░░░░░██░░░██░░░░░░████░
+    █░░░░█░░░██░░░██░░░██░░░░░░██░░░██░░░░░░░░░██
+    █████████████████████████████████████████████
+    """)
 
+    print("-----[MATH]-----")
+    print("[1] Переводчик систем счисления")
+    print("[2] Возведение любого числа в степень")
+    print("[3] Модуль числа")
+    print("[4] Пифагоровы тройки")
+    print("[5] Количество делителей")
+    print("[6] Гипотенуза")
+    print("[7] Корень числа")
+    print("[8] Факториал")
+    print("[9] Калькулятор")
+    print("[10] НОК и НОД")
+    func = int(input("Выберите нужную функцию: "))
 
-
-
-if func == 1:
-    sistsch()
-elif func == 2:
-    stepeni()
-elif func == 3:
-    modul()
-elif func == 4:
-    pif3()
-elif func == 5:
-    delit()
-elif func == 6:
-    gipo()
-elif func == 7:
-    find_square_root()
-elif func == 8:
-    num = int(input("Введите число факториал которого нужно посчитать: "))
-    print(f"Факториал {num} равен {factorial(num)}")
-elif func == 9:
-    calculator()
-elif func == 10:
-    gcd_lcm()
-
+    if func == 1:
+        sistsch()
+    elif func == 2:
+        stepeni()
+    elif func == 3:
+        modul()
+    elif func == 4:
+        pif3()
+    elif func == 5:
+        delit()
+    elif func == 6:
+        gipo()
+    elif func == 7:
+        find_square_root()
+    elif func == 8:
+        num = int(input("Введите число факториал которого нужно посчитать: "))
+        print(f"Факториал {num} равен {factorial(num)}")
+    elif func == 9:
+        calculator()
+    elif func == 10:
+        gcd_lcm()
+    
+    repeat = input("Хотите выполнить еще одну операцию? (да/нет): ")
+    if repeat.lower() != 'да':
+        break
